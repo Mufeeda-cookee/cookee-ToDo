@@ -17,6 +17,7 @@ function AddTaskForm() {
   const onDelete = (index) => {
     setTodos(todos.filter((to) => to.index !== index));
   };
+  
 
   const onEdit = (index) => {
     const editTodo = todos.find((to) => to.index === index);
