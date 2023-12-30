@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import AddTaskForm from "./pages/AddTaskForm";
+import AddTaskForm from "./AddTaskForm";
 
 const App = () => {
   return (
