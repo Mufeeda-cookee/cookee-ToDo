@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import EditBox from "./pages/EditBox";
 import AddBox from "./pages/AddBox";
-import Todos from "./pages/TaskList";
+import Todos from "./pages/Todos";
 
 function AddTaskForm() {
   const [todo, setTodo] = useState("");

@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../components/Button"
 
-function TaskList({ value, onEdit, onDelete }) {
+function Todos({ value, onEdit, onDelete }) {
   return (
     <div className="flex flex-col mt-[10px] items-center">
       <div className="w-[350px] h-[45px] justify-center items-center  border border-slate-400 bg-yellow-200 ">
@@ -20,4 +20,4 @@ function TaskList({ value, onEdit, onDelete }) {
   );
 }
 
-export default TaskList;
+export default Todos;
