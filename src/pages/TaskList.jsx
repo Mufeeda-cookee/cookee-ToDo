@@ -1,15 +1,18 @@
 import React from "react";
-import Checkbox from "../components/TaskList/Checkbox";
-import Text from "../components/TaskList/AddText";
-import Button from "../components/TaskList/Button";
+import Button from "../components/Button"
 
-function TaskList({ value,onEdit, onDelete }) {
+function TaskList({ value, onEdit, onDelete }) {
   return (
     <div className="flex flex-col mt-[10px] items-center">
       <div className="w-[350px] h-[45px] justify-center items-center  border border-slate-400 bg-yellow-200 ">
         <div className="flex flex-row mt-3">
-          <Checkbox />
-          <Text value={value}/>
+          <input
+            type="checkbox"
+            name=""
+            id=""
+            className="w-[20px] h-[20px] ml-1"
+          />
+          <p className="text-orange-500 font-semibold ml-2">{value}</p>
           <Button onEdit={onEdit} onDelete={onDelete} />
         </div>
       </div>

@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import TaskList from "./pages/TaskList";
 import EditBox from "./pages/EditBox";
 import AddBox from "./pages/AddBox";
+import Todos from "./pages/TaskList";
 
 function AddTaskForm() {
   const [todo, setTodo] = useState("");
   const [todos, setTodos] = useState([]);
   const [updatetodo, setUpdateTodo] = useState(null);
 
-  const addTodo = (index) => {
+  const addTodo = (index) => {   
     setTodos([...todos, { text: todo, index: index }]);
     setTodo("");
   };
@@ -48,7 +48,7 @@ function AddTaskForm() {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-4 bg-white mt-8 rounded-md shadow-md">
+    <div className="max-w-xl mx-auto p-6 bg-white mt-8 rounded-md shadow-md">
       <div className="flex flex-col justify-center items-center">
         <AddBox addTodo={addTodo} setTodo={setTodo} todo={todo} />
         {updatetodo && (
@@ -62,7 +62,7 @@ function AddTaskForm() {
         {todos.map(
           (to, index) =>
             to.index !== updatetodo?.index && (
-              <TaskList
+              <Todos
                 key={index}
                 todo={to}
                 value={to.text}
