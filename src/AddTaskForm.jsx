@@ -8,8 +8,8 @@ function AddTaskForm() {
   const [todos, setTodos] = useState([]);
   const [updatetodo, setUpdateTodo] = useState(null);
 
-  const addTodo = (index) => {   
-    setTodos([...todos, { text: todo, index: index }]);
+  const addTodo = () => {
+    setTodos([...todos, { text: todo }]);
     setTodo("");
   };
 
@@ -18,32 +18,15 @@ function AddTaskForm() {
   };
 
   const onEdit = (index) => {
-    const editTodo = todos[index];
-    setTodo("");
-    setUpdateTodo({
-      updatetext: editTodo.text,
-      index: editTodo.index,
-    });
-  };
-
-  const handleUpdate = () => {
-    if (updatetodo) {
-      const updatedTodos = todos.map((to) =>
-        to.index === updatetodo.index
-          ? {
-              ...to,
-              text: updatetodo.updatetext,
-            }
-          : to
-      );
-      setTodos(updatedTodos);
-      setUpdateTodo(null);
-    }
-  };
-  const updatingTheTextInEditbox = (event) => {
-    setUpdateTodo({
-      ...updatetodo,
-      updatetext: event.target.value,
+    todos.map((todo, i) => {
+      if (i === index) {
+        setTodo("");
+        setUpdateTodo({
+          updatetext: todo.text,
+          index: i,
+        });
+      }
+      return todo;
     });
   };
 
@@ -53,18 +36,17 @@ function AddTaskForm() {
         <AddBox addTodo={addTodo} setTodo={setTodo} todo={todo} />
         {updatetodo && (
           <EditBox
-            updatingTheTextInEditbox={updatingTheTextInEditbox}
-            value={updatetodo.updatetext}
-            handleUpdate={handleUpdate}
             setUpdateTodo={setUpdateTodo}
+            todos={todos}
+            setTodos={setTodos}
+            updatetodo={updatetodo}
           />
         )}
         {todos.map(
           (to, index) =>
-            to.index !== updatetodo?.index && (
+            index !== updatetodo?.index && (
               <Todos
                 key={index}
-                todo={to}
                 value={to.text}
                 onEdit={() => onEdit(index)}
                 onDelete={() => onDelete(index)}

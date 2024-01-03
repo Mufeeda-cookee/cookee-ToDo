@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import AddTaskForm from "./AddTaskForm";
 
 const App = () => {
@@ -11,7 +10,6 @@ const App = () => {
           </div>
           <AddTaskForm />
         </div>
-        
       </div>
     </>
   );

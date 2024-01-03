@@ -5,7 +5,7 @@ function Todos({ value, onEdit, onDelete }) {
   return (
     <div className="flex flex-col mt-[10px] items-center">
       <div className="w-[350px] h-[45px] justify-center items-center  border border-slate-400 bg-yellow-200 ">
-        <div className="flex flex-row mt-3">
+        <div className="flex mt-3">
           <input
             type="checkbox"
             name=""

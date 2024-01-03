@@ -5,7 +5,7 @@ import AddingButton from "../components/AddBox/AddingButton";
 function AddBox({ addTodo, setTodo, todo }) {
   return (
     <>
-      <div className="flex flex-row">
+      <div className="flex ">
         <AddingBox todo={todo} setTodo={setTodo} />
         <AddingButton addTodo={addTodo} />
       </div>
